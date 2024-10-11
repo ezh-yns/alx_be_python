@@ -24,15 +24,15 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.subtract(6.5, 2.5), 4.0)  
 
     
-    def test_multiply(self):
-        """Test the multiply method."""
+    def test_multiplication(self):
+        """Test the multiplication method."""
         self.assertEqual(self.calc.multiply(5, 2), 10)  
         self.assertEqual(self.calc.multiply(-5, 2), -10)  
         self.assertEqual(self.calc.multiply(2.5, 2.5), 6.25)  
 
 
-    def test_divide(self):
-        """Test the devide method."""
+    def test_division(self):
+        """Test the devision method."""
         self.assertEqual(self.calc.divide(10, 2), 5)  
         self.assertEqual(self.calc.divide(10.5, 2.5), 4.2)  
         with self.assertRaises(ZeroDivisionError):
