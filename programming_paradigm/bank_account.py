@@ -13,7 +13,6 @@ class BankAccount:
             self.__account_balance -= amount
             return True
         else:   
-            print("Withdrawal amount must be positive and not exceed the account balance.")
             return False
 
     def display_balance(self):
