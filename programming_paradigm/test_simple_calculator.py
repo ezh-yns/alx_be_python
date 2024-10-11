@@ -1,7 +1,7 @@
 import unittest
 from simple_calculator import SimpleCalculator
 
-class TestAddFunction(unittest.TestCase):
+class testSimpleCalculator(unittest.TestCase):
     
     def test_add_integers(self):
         result = SimpleCalculator.add(1, 2)
@@ -19,39 +19,31 @@ class TestAddFunction(unittest.TestCase):
         result = SimpleCalculator.add([1, 2], [3, 4])
         self.assertEqual(result, [1, 2, 3, 4]) 
 
-class TestSubtractFunction(unittest.TestCase):
-    
-    def test_add_integers(self):
+    def test_subtract_integers(self):
         result = SimpleCalculator.subtract(5, 2)
         self.assertEqual(result, 3)  
 
-    def test_add_floats(self):
+    def test_subtract_floats(self):
         result = SimpleCalculator.subtract(6.5, 2.5)
         self.assertEqual(result, 4.0) 
 
-class TestMultiplyFunction(unittest.TestCase):
     
-    def test_add_integers(self):
+    def test_multiply_integers(self):
         result = SimpleCalculator.multiply(5, 2)
         self.assertEqual(result, 10)  
 
-    def test_add_floats(self):
+    def test_multiply_floats(self):
         result = SimpleCalculator.multiply(2.5, 2.5)
         self.assertEqual(result, 6.25) 
 
-class TestDivideFunction(unittest.TestCase):
-    
-    def test_add_integers(self):
+
+    def test_divide_integers(self):
         result = SimpleCalculator.divide(10, 2)
         self.assertEqual(result, 5)  
 
-    def test_add_floats(self):
+    def test_divide_floats(self):
         result = SimpleCalculator.divide(10.5, 2.5)
         self.assertEqual(result, 4.2) 
-
-    # def test_add_raises_type_error(self):
-    #     with self.assertRaises(ZeroDivisionError):
-    #         SimpleCalculator.divide(5, 0) 
 
 
 if __name__ == '__main__':
