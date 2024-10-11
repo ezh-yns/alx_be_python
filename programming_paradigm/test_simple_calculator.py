@@ -1,57 +1,42 @@
 import unittest
 from simple_calculator import SimpleCalculator
 
-class TestAddFunction(unittest.TestCase):
+class TestSimpleCalculator(unittest.TestCase):
+
+    def setUp(self):
+        """Set up the SimpleCalculator instance before each test."""
+        self.calc = SimpleCalculator()
+
+    def test_addition(self):
+        """Test the addition method."""
+        self.assertEqual(self.calc.add(2, 3), 5)
+        self.assertEqual(self.calc.add(-1, 1), 0)
+        self.assertEqual(self.calc.add(1.5, 1.5), 3.0)
+        self.assertEqual(self.calc.add("Hello", "world"), "Hello World")
+        self.assertEqual(self.calc.add([1, 2], [3, 4]), [1, 2, 3, 4])
+        # Add more assertions to thoroughly test the add method.
+   
+
+    def test_subtraction(self):
+        """Test the subtraction method."""
+        self.assertEqual(self.calc.subtract(5, 2), 3)  
+        self.assertEqual(self.calc.subtract(-5, -2), -7)  
+        self.assertEqual(self.calc.subtract(6.5, 2.5), 4.0)  
+
     
-    def test_add_integers(self):
-        result = SimpleCalculator.add(1, 2)
-        self.assertEqual(result, 3)  
+    def test_multiplication(self):
+        """Test the multiply method."""
+        self.assertEqual(self.calc.multiply(5, 2), 10)  
+        self.assertEqual(self.calc.multiply(-5, 2), -10)  
+        self.assertEqual(self.calc.multiply(2.5, 2.5), 6.25)  
 
-    def test_add_floats(self):
-        result = SimpleCalculator.add(1.5, 2.5)
-        self.assertEqual(result, 4.0)  
 
-    def test_add_strings(self):
-        result = SimpleCalculator.add("Hello", " World")
-        self.assertEqual(result, "Hello World")  
-
-    def test_add_lists(self):
-        result = SimpleCalculator.add([1, 2], [3, 4])
-        self.assertEqual(result, [1, 2, 3, 4]) 
-
-class TestSubtractFunction(unittest.TestCase):
-    
-    def test_add_integers(self):
-        result = SimpleCalculator.subtract(5, 2)
-        self.assertEqual(result, 3)  
-
-    def test_add_floats(self):
-        result = SimpleCalculator.subtract(6.5, 2.5)
-        self.assertEqual(result, 4.0) 
-
-class TestMultiplyFunction(unittest.TestCase):
-    
-    def test_add_integers(self):
-        result = SimpleCalculator.multiply(5, 2)
-        self.assertEqual(result, 10)  
-
-    def test_add_floats(self):
-        result = SimpleCalculator.multiply(2.5, 2.5)
-        self.assertEqual(result, 6.25) 
-
-class TestDivideFunction(unittest.TestCase):
-    
-    def test_add_integers(self):
-        result = SimpleCalculator.divide(10, 2)
-        self.assertEqual(result, 5)  
-
-    def test_add_floats(self):
-        result = SimpleCalculator.divide(10.5, 2.5)
-        self.assertEqual(result, 4.2) 
-
-    # def test_add_raises_type_error(self):
-    #     with self.assertRaises(ZeroDivisionError):
-    #         SimpleCalculator.divide(5, 0) 
+    def test_division(self):
+        """Test the devide method."""
+        self.assertEqual(self.calc.divide(10, 2), 5)  
+        self.assertEqual(self.calc.divide(10.5, 2.5), 4.2)  
+        with self.assertRaises(ZeroDivisionError):
+            self.calc.divide(1, 0)
 
 
 if __name__ == '__main__':
