@@ -17,7 +17,7 @@ class EBook(Book):
 
     def __str__(self):
         """Return a string representation of the eBook."""
-        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}kB"
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
 
 
 class PrintBook(Book):
